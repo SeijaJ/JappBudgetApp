@@ -65,15 +65,6 @@ namespace BudgetApp.Controllers
         }
 
 
-        /// <summary>
-        /// Method to search for all expenses for a month and year
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <param name="searchMonth"> Userinput for specific month to search for </param>
-        /// <param name="searchYear"> Userinput for the year to search in </param>
-        /// <returns> A list list of the expenses for the month, including the names of payees </returns>
-        /// 
-
         [HttpGet("{searchMonth}/{searchYear}")]
 
         public async Task<IEnumerable<ExpenseDTO>> GetGetMonthlyExpenseWithPayeeAsync(Guid userId, int searchMonth, int searchYear)
