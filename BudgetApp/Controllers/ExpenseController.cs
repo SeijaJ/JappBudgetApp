@@ -26,14 +26,14 @@ namespace BudgetApp.Controllers
         [HttpGet]
         public async Task<IEnumerable<Expense>> GetExpense()
         {
-            return await _expenseService.GetAll();
+            return await _expenseService.GetAllAsync();
         }
 
         // GET api/<ExpenseController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Expense>> GetExpense(Guid id)
         {
-            var expense = await _expenseService.Get(id);
+            var expense = await _expenseService.GetAsync(id);
 
             if (expense == null)
             {
@@ -47,21 +47,21 @@ namespace BudgetApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Expense>> PostExpense(Expense expense)
         {
-            return await _expenseService.Add(expense);
+            return await _expenseService.AddAsync(expense);
         }
 
         // PUT api/<ExpenseController>/5
         [HttpPut("{id}")]
         public async Task<ActionResult<Expense>> PutExpense(Expense expense, Guid id)
         {
-            return await _expenseService.Update(expense, id);
+            return await _expenseService.UpdateAsync(expense, id);
         }
 
         // DELETE api/<ExpenseController>/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Expense>> DeleteExpense(Expense expense, Guid id)
         {
-            return await _expenseService.Delete(expense, id);
+            return await _expenseService.DeleteAsync(expense, id);
         }
 
 

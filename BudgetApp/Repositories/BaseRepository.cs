@@ -17,7 +17,7 @@ namespace BudgetApp.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<TEntity> Add(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace BudgetApp.Repositories
             }
         }
 
-        public async Task<TEntity> Delete(TEntity entity, Guid id)
+        public async Task<TEntity> DeleteAsync(TEntity entity, Guid id)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace BudgetApp.Repositories
             }
         }
 
-        public async Task<TEntity> Get(Guid id)
+        public async Task<TEntity> GetAsync(Guid id)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace BudgetApp.Repositories
             }
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             try
             {
@@ -69,11 +69,11 @@ namespace BudgetApp.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception($"Could not retrieve enteties of {ex.Message}");
+                throw new Exception($"Could not retrieve enteties {ex.Message}");
             }
         }
 
-        public async Task<TEntity> Update(TEntity entity, Guid id)
+        public async Task<TEntity> UpdateAsync(TEntity entity, Guid id)
         {
             try
             {

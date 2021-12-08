@@ -24,14 +24,14 @@ namespace BudgetApp.Controllers
         [HttpGet]
         public async Task<IEnumerable<User>> GetUser()
         {
-            return await _userService.GetAll();
+            return await _userService.GetAllAsync();
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(Guid id)
         {
-            var user = await _userService.Get(id);
+            var user = await _userService.GetAsync(id);
 
             if (user == null)
             {
@@ -45,21 +45,21 @@ namespace BudgetApp.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            return await _userService.Add(user);
+            return await _userService.AddAsync(user);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
         public async Task<ActionResult<User>> PutUser(User user, Guid id)
         {
-            return await _userService.Update(user, id);
+            return await _userService.UpdateAsync(user, id);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(User user, Guid id)
         {
-            return await _userService.Delete(user, id);
+            return await _userService.DeleteAsync(user, id);
         }
     }
 }

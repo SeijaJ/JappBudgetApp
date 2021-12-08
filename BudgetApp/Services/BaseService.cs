@@ -15,35 +15,30 @@ namespace BudgetApp.Services
             _baseRepo = baseRepository;
         }
 
-        // Add
-        public async Task<TEntity> Add(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            return await _baseRepo.Add(entity);
+            return await _baseRepo.AddAsync(entity);
         }
 
-        // Delete
-        public async Task<TEntity> Delete(TEntity entity, Guid id)
+        public async Task<TEntity> DeleteAsync(TEntity entity, Guid id)
         {
-            await _baseRepo.Delete(entity, id);
+            await _baseRepo.DeleteAsync(entity, id);
             return entity;
         }
 
-        // Get
-        public async Task<TEntity> Get(Guid id)
+        public async Task<TEntity> GetAsync(Guid id)
         {
-            return await _baseRepo.Get(id);
+            return await _baseRepo.GetAsync(id);
         }
 
-        // GetAll
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _baseRepo.GetAll();
+            return await _baseRepo.GetAllAsync();
         }
 
-        // Update
-        public async Task<TEntity> Update(TEntity entity, Guid id)
+        public async Task<TEntity> UpdateAsync(TEntity entity, Guid id)
         {
-            await _baseRepo.Update(entity, id);
+            await _baseRepo.UpdateAsync(entity, id);
             return entity;
         }
     }

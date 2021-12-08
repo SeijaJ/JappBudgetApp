@@ -7,10 +7,10 @@ namespace BudgetApp.Interfaces
 {
     public interface IBaseMethodsServiceRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<TEntity>> GetAll();
-        Task<TEntity> Get(Guid id);
-        Task<TEntity> Add(TEntity entity);
-        Task<TEntity> Update(TEntity entity, Guid id);
-        Task<TEntity> Delete(TEntity entity, Guid id);
+        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<TEntity> GetAsync(Guid id);
+        Task<TEntity> AddAsync(TEntity entity);
+        Task<TEntity> UpdateAsync(TEntity entity, Guid id);
+        Task<TEntity> DeleteAsync(TEntity entity, Guid id);
     }
 }

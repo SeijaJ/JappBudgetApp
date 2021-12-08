@@ -38,6 +38,7 @@ namespace BudgetApp.Services
             {
                 monthlyExpensesDTO.Add(new ExpenseDTO
                 {
+                    ExpenseId = result.ExpenseId,
                     ExpenseMonth = result.ExpenseMonth,
                     ExpenseYear = result.ExpenseYear,
                     ExpenseAmount = result.ExpenseAmount,
